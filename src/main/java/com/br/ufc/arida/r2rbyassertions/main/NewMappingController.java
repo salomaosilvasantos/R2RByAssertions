@@ -151,22 +151,18 @@ public class NewMappingController implements Initializable {
         MappingConfiguration mc = null;
         
         if (!("".equals(filePathTarget.getText().trim())) && !("".equals(filePathSource.getText().trim()))) {
-            System.out.println("Entrou no 1");
             mc = new MappingConfiguration(targetOntology.getText(), sourceOntology.getText(), filePathTarget.getText(), filePathSource.getText(), 1, 1, TargetOntoLangs.getValue(), SourceOntoLangs.getValue(),filePathR2RSource.getText(),filePathR2RTarget.getText());
         }
 
         if (("".equals(filePathTarget.getText().trim())) && !("".equals(filePathSource.getText().trim()))) {
-            System.out.println("Entrou no 2");
             mc = new MappingConfiguration(targetOntology.getText(), sourceOntology.getText(), filePathTarget.getText(), filePathSource.getText(), 2, 1, TargetOntoLangs.getValue(), SourceOntoLangs.getValue(),filePathR2RSource.getText(),filePathR2RTarget.getText());
         }
 
         if (!("".equals(filePathTarget.getText().trim())) && ("".equals(filePathSource.getText().trim()))) {
-            System.out.println("Entrou no 3");
             mc = new MappingConfiguration(targetOntology.getText(), sourceOntology.getText(), filePathTarget.getText(), filePathSource.getText(), 1, 2, TargetOntoLangs.getValue(), SourceOntoLangs.getValue(),filePathR2RSource.getText(),filePathR2RTarget.getText());
         }
 
         if (("".equals(filePathTarget.getText().trim())) && ("".equals(filePathSource.getText().trim()))) {
-            System.out.println("Entrou no 4");
             mc = new MappingConfiguration(targetOntology.getText(), sourceOntology.getText(), filePathTarget.getText(), filePathSource.getText(), 2, 2, TargetOntoLangs.getValue(), SourceOntoLangs.getValue(),filePathR2RSource.getText(),filePathR2RTarget.getText());
         }
 

@@ -13,7 +13,12 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import javax.swing.JOptionPane;
+
+import com.br.ufc.arida.r2rbyassertions.main.MainController;
 
 /**
  *
@@ -103,16 +108,17 @@ public class Conexao {
     	String path = resourcesDirectory.getAbsolutePath();
     	String arq_assertions_path = path + File.separatorChar + "assertions.txt";
     	String arq_r2rmappings_path = path + File.separatorChar + "r2rMappings.ttl";
-    	String pathOntologyTarget = path + File.separatorChar + "MyMusic_target.owl";
-        
+        String message = "";
         switch (_arq) {
             case ARQ_ASSERTIONS: {
                 _path = arq_assertions_path;
+                message = "File generated with MAPPING ASSERTIONS, in the path: ";
                 break;
             }
             case ARQ_R2RMAPPING: {
                 _path = arq_r2rmappings_path;
                 _txt = this.headerR2R + _txt;
+                message = "File generated with R2R MAPPING, in the path:  ";
                 break;
             }
             
@@ -122,11 +128,13 @@ public class Conexao {
             }
         }
         //inArq = new BufferedWriter(new FileWriter(_path, _append));
+        
         PrintWriter pw = new PrintWriter (new OutputStreamWriter (new FileOutputStream (_path), "UTF-8"));
         pw.write(_txt+'\n');
         //inArq.write(_txt + '\n');
         //inArq.close();
         pw.close();
+        Logger.getLogger(MainController.class.getName()).log(Level.INFO, message + _path);;
     }
 
     public void copyFile(String _path, int _type) throws IOException {

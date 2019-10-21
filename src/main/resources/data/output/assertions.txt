@@ -1,1 +1,1 @@
-dc:title ≡ dbo:Album / dbo:originaltitle
+mo:Record ≡ dbo:Album

@@ -165,7 +165,6 @@ public class TbpaneCCAController extends TbpaneController implements Initializab
         } catch (IOException ex) {
             Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        System.out.println("Este print foi no TbpaneCCA linha 143: " + this.getClass().getSimpleName() + ".initialize");
         TabPaneCA.tPaneCA.setLoadSStage(loadSStage);
     }
 

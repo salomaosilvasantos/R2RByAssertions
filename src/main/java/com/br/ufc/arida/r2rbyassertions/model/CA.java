@@ -74,7 +74,6 @@ public abstract class CA{
      */
     
     protected int generateId() {
-        System.out.println("Gerou nova identificacao " + idCA);
         ids.add(idCA);
         return ++idCA;
     }

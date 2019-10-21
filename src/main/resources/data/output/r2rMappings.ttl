@@ -3,11 +3,11 @@
 # Made up Mapping publisher
 @prefix mp: <http://www.example.org/> . 
 
-#Property Mappings
+# Class Mappings
+mp:ΨCAlbum24
+a r2r:ClassMapping;
+r2r:prefixDefinitions "mo: <http://purl.org/ontology/mo/> . dbo: <http://dbpedia.org/ontology/> ";
+r2r:sourcePattern "?SUBJ a dbo:Album";
+r2r:targetPattern "?SUBJ a mo:Record".
 
-mp:ΨDtitle11
-a r2r:PropertyMapping;
-r2r:prefixDefinitions "dbo:<http://dbpedia.org/ontology/> . dc:<http://purl.org/dc/elements/1.1/> ";
-r2r:MappingRef mp:ΨCAlbum24;
-r2r:sourcePattern "?SUBJ dbo:originalTitle  ?originalTitle";
-r2r:targetPattern "?SUBJ dc:title  ?originalTitle".
+
