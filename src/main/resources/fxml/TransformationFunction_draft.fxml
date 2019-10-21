@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="178.0" prefWidth="598.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.br.ufc.arida.r2rbyassertions.main.FunctionTransformationController">
+    <children>
+        <Pane prefHeight="178.0" prefWidth="598.0">
+            <children>
+                <TextField fx:id="textFunction" layoutX="13.0" layoutY="137.0" prefHeight="28.0" prefWidth="449.0" />
+                <Label layoutX="14.0" layoutY="116.0" text="Transformation Function">
+                    <font>
+                        <Font name="System Bold" size="11.0" />
+                    </font>
+                </Label>
+                <Label layoutX="11.0" layoutY="10.0" text="Transformation Function">
+                    <font>
+                        <Font name="System Bold" size="11.0" />
+                    </font>
+                </Label>
+                <Button fx:id="saveFunction" layoutX="468.0" layoutY="136.0" mnemonicParsing="false" onAction="#saveFunction" prefHeight="28.0" prefWidth="47.0" text="Save" />
+                <Button fx:id="cancel" layoutX="524.0" layoutY="136.0" mnemonicParsing="false" onAction="#cancelFired" prefHeight="28.0" prefWidth="64.0" text="Cancel" />
+                <Separator layoutX="144.0" layoutY="12.0" prefHeight="14.0" prefWidth="449.0" />
+                <MenuButton fx:id="functionsR2R" layoutX="109.0" layoutY="60.0" mnemonicParsing="false" onAction="#functionsR2RFired" prefHeight="25.0" prefWidth="153.0" text="MenuButton">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#listFunction" text="listFunction" />
+                        <MenuItem mnemonicParsing="false" onAction="#stringFunction" text="stringFunction" />
+                        <MenuItem mnemonicParsing="false" onAction="#arithmeticFunctionFunction" text="arithmeticFunctionFunction" />
+                        <MenuItem mnemonicParsing="false" onAction="#xpathFunctionFunction" text="xpathFunctionFunction" />
+                    </items>
+                </MenuButton>
+                <Label layoutX="13.0" layoutY="63.0" text="Select a Function:" />
+                <Separator layoutX="590.0" layoutY="18.0" orientation="VERTICAL" prefHeight="154.0" prefWidth="6.0" />
+                <Separator layoutX="5.0" layoutY="169.0" prefHeight="8.0" prefWidth="588.0" />
+                <Separator layoutX="4.0" layoutY="19.0" orientation="VERTICAL" prefHeight="153.0" prefWidth="6.0" />
+                <HBox fx:id="hboxFunction" layoutX="270.0" layoutY="23.0" prefHeight="101.0" prefWidth="316.0" style="-fx-border-radius: 1px; -fx-border-color: grey;">
+               <children>
+                  <AnchorPane id="AnchorPane" prefHeight="101.0" prefWidth="316.0">
+                     <children>
+                        <Pane prefHeight="101.0" prefWidth="316.0">
+                           <children>
+                              <MenuButton fx:id="generateFunction" layoutX="95.0" layoutY="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="212.0" text="MenuButton">
+                                 <!--  <items>
+                                  <MenuItem mnemonicParsing="false" text="list" />
+                                    <MenuItem mnemonicParsing="false" text="sublist" />
+                                    <MenuItem mnemonicParsing="false" text="subListByIndex" />
+                                    <MenuItem mnemonicParsing="false" text="listConcat" />
+                                    <MenuItem mnemonicParsing="false" text="getByIndex" />
+                                    <MenuItem mnemonicParsing="false" text="length" />
+                                 </items>-->
+                              </MenuButton>
+                              <Label layoutX="4.0" layoutY="15.0" text="List of Functions:" />
+                              <Label layoutX="8.0" layoutY="65.0" text="Propertys:" />
+                              <MenuButton fx:id="varProperty" layoutX="76.0" layoutY="62.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="160.0" text="MenuButton" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+               </children></HBox>
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>

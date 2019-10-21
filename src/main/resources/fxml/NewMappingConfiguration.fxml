@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="620.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.br.ufc.arida.r2rbyassertions.main.NewMappingController">
+   <children>
+    <VBox prefHeight="571.0" prefWidth="578.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <AnchorPane prefHeight="45.0" prefWidth="557.0">
+          <children>
+            <Label layoutX="7.0" layoutY="10.0" text="Mapping Configuration" underline="false">
+              <font>
+                <Font name="System Bold" size="16.0" />
+              </font>
+            </Label>
+          </children>
+        </AnchorPane>
+            <AnchorPane prefHeight="366.0" prefWidth="578.0">
+               <children>
+                  <Pane layoutX="11.0" layoutY="27.0" prefHeight="146.0" prefWidth="555.0" style="-fx-border-radius: 1px; -fx-border-color: gray;">
+                     <children>
+                        <Label layoutX="16.0" layoutY="42.0" text="Target File: " />
+                        <Label layoutX="16.0" layoutY="77.0" text="Target URL: " />
+                        <Label layoutX="16.0" layoutY="111.0" text="Target Language: " />
+                        <TextField id="tOntology" fx:id="targetOntology" layoutX="151.0" layoutY="7.0" prefHeight="25.0" prefWidth="327.0" promptText="" text="" />
+                        <TextField id="TFile" fx:id="filePathTarget" layoutX="92.0" layoutY="40.0" prefHeight="25.0" prefWidth="386.0" promptText="" text="" />
+                        <Button layoutX="487.0" layoutY="40.0" mnemonicParsing="false" onAction="#searchFiredTarget" prefHeight="25.0" prefWidth="61.0" text="Search" />
+                        <ComboBox id="TLanguage" fx:id="TargetOntoLangs" layoutX="120.0" layoutY="109.0" prefWidth="150.0">
+                             <items>
+                           <FXCollections fx:factory="observableArrayList">
+                             <String fx:value="RDF/XML" />
+                             <String fx:value="RDF/XML-ABBREV" />
+                             <String fx:value="N-TRIPLE" />
+                             <String fx:value="TURTLE" />
+                             <String fx:value="TTL" />
+                             <String fx:value="N3" />
+                           </FXCollections>
+                         </items>
+                        </ComboBox>
+                        <TextField id="TUrl" fx:id="ontoUrlTarget" layoutX="92.0" layoutY="74.0" prefHeight="25.0" prefWidth="386.0" />
+                        <HBox layoutX="15.0" layoutY="9.0" prefHeight="25.0" prefWidth="130.0">
+                           <children>
+                              <Label text="Target Ontology Name: " />
+                           </children>
+                        </HBox>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="11.0" layoutY="203.0" prefHeight="146.0" prefWidth="555.0" style="-fx-border-radius: 1px; -fx-border-color: gray;">
+                     <children>
+                        <TextField id="SOntology" fx:id="sourceOntology" layoutX="154.0" layoutY="8.0" prefHeight="25.0" prefWidth="327.0" />
+                        <Label layoutX="16.0" layoutY="44.0" text="Source File: " />
+                        <Label layoutX="16.0" layoutY="78.0" text="Source URL: " />
+                        <Label layoutX="16.0" layoutY="111.0" text="Source Language: " />
+                        <ComboBox id="SLanguage" fx:id="SourceOntoLangs" layoutX="120.0" layoutY="109.0" prefWidth="150.0">
+                          <items>
+                           <FXCollections fx:factory="observableArrayList">
+                             <String fx:value="RDF/XML" />
+                             <String fx:value="RDF/XML-ABBREV" />
+                             <String fx:value="N-TRIPLE" />
+                             <String fx:value="TURTLE" />
+                             <String fx:value="TTL" />
+                             <String fx:value="N3" />
+                           </FXCollections>
+                         </items>
+                        </ComboBox>
+                        <TextField id="SUrl" fx:id="ontoUrlSource" layoutX="92.0" layoutY="75.0" prefHeight="25.0" prefWidth="386.0" />
+                        <Button layoutX="487.0" layoutY="40.0" mnemonicParsing="false" onAction="#searchFiredSource" prefHeight="25.0" prefWidth="61.0" text="Search" />
+                        <TextField id="SFile" fx:id="filePathSource" layoutX="92.0" layoutY="41.0" prefHeight="25.0" prefWidth="386.0" />
+                        <HBox layoutX="16.0" layoutY="11.0" prefHeight="25.0" prefWidth="130.0">
+                           <children>
+                              <Label text="Source Ontology Name: " />
+                           </children>
+                        </HBox>
+                     </children>
+                  </Pane>
+                  <Label layoutX="14.0" layoutY="181.0" prefHeight="17.0" prefWidth="145.0" text="Ontology Schema Source">
+                    <font>
+                      <Font name="System Bold" size="12.0" />
+                    </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="2.0" text="Ontology Schema Target">
+                    <font>
+                       <Font name="System Bold" size="12.0" />
+                    </font>
+                 </Label>
+               </children>
+            </AnchorPane>
+            <Label text="R2R Configuration">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="15.0" top="7.0" />
+               </VBox.margin>
+            </Label>
+            <AnchorPane prefHeight="137.0" prefWidth="578.0">
+               <children>
+                  <Pane layoutX="11.0" layoutY="-1.0" prefHeight="121.0" prefWidth="555.0" style="-fx-border-radius: 1px; -fx-border-color: gray;">
+                     <children>
+                        <TextField fx:id="filePathR2RSource" layoutX="104.0" layoutY="12.0" prefHeight="25.0" prefWidth="370.0" />
+                        <Button layoutX="481.0" layoutY="12.0" mnemonicParsing="false" onAction="#searchRDFSourceFile" prefHeight="25.0" prefWidth="64.0" text="Search" />
+                        <Button layoutX="481.0" layoutY="43.0" mnemonicParsing="false" onAction="#searchRDFTargetFile" prefHeight="25.0" prefWidth="64.0" text="Search" />
+                     </children>
+                  </Pane>
+                  <Label layoutX="25.0" layoutY="13.0" text="R2R Source File: " />
+                  <Label layoutX="25.0" layoutY="44.0" text="R2R Target File: " />
+                  <TextField fx:id="filePathR2RTarget" layoutX="115.0" layoutY="42.0" prefHeight="25.0" prefWidth="370.0" />
+                  <Label layoutX="26.0" layoutY="81.0" text="URL R2R: " />
+                  <TextField layoutX="88.0" layoutY="78.0" prefHeight="25.0" prefWidth="398.0" />
+               </children>
+               <VBox.margin>
+                  <Insets top="7.0" />
+               </VBox.margin>
+            </AnchorPane>
+        <HBox id="HBox" alignment="BOTTOM_CENTER" spacing="5.0">
+          <children>
+            <Button mnemonicParsing="false" onAction="#cancelFired" text="Cancel" />
+            <Button fx:id="save" mnemonicParsing="false" onAction="#saveFired" text="Save" /><!-->-->
+          </children>
+          <padding>
+            <Insets bottom="5.0" top="5.0" />
+          </padding>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+        </HBox>
+      </children>
+    </VBox>
+  </children>
+</AnchorPane>

@@ -1,0 +1,13 @@
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix moa: <http://www.example.org/moa/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix mb: <http://www.example.org/ontology/mb/>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dbp: <http://dbpedia.org/property/>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#>              
+mo:MusicArtist+(moa:careerDuration, foaf:name, moa:birthPlace, moa:hasLabel, foaf:made)
+mo:Record+(dc:date, dc:title, moa:recordLabel, foaf:maker)
+moa:Country+(vcard:Country_name)
+mo:Label+(moa:labelname)

@@ -1,0 +1,127 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dbp: <http://dbpedia.org/property/> .
+@prefix dbpedia-fr: <http://fr.dbpedia.org>.
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix moa: <http://www.example.org/moa/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#>.
+
+
+dbo:Michael_Jackson a dbo:MusicalArtist ;
+	foaf:name "Jackson, Michael Joseph" , "Michael Joseph Jackson" ;
+	foaf:homepage "http://www.michaeljackson.com/" ;
+	dbp:startCareer "1958-08-29";
+	dbp:endcarrer "2009-06-29";
+	dbp:birthPlace dbp:Gary_Indiana.
+
+dbo:Chico_Buarque a dbo:MusicalArtist ;
+	dbo:abstract "Brazilian single, MPB" ;
+	foaf:name "Holanda, Chico Buarque de" , "Chico Buarque de Holanda" ;
+	foaf:homepage "http://www.chicobuarque.com.br/" ;
+	dbp:startCareer "1944-06-19";
+	dbp:birthPlace  dbp:Rio_de_Janeiro.
+
+dbo:Nando_Reis a dbo:MusicalArtist ;
+	foaf:name "Nando Reis";
+	foaf:homepage "http://www.nandoreis.com.br/";
+	dbp:startCareer "1963-01-12";
+	dbp:birthPlace dbp:São_Paulo.
+
+dbo:Bruno_Mars a dbo:MusicalArtist ;
+	foaf:name "Bruno Mars";
+	foaf:homepage "http://www.brunomars.com/de/";
+	dbp:startCareer "1985-10-08";
+	dbp:birthPlace dbp:Honolulu.
+
+dbo:thriller a dbo:Album ;
+	dbo:originalTitle "Thriller" ;
+	dbo:releaseDate "1982-11-30" ;
+	dbo:artist dbo:Michael_Jackson ;
+	dbo:recordLabel dbo:EPIC .
+
+dbo:Morte_Vida_Severina a dbo:Album ;
+	dbo:originalTitle "Morte e Vida Severina" ;
+	dbo:releaseDate "1966-01-14" ;
+	dbo:artist dbo:Chico_Buarque ;
+    dbo:recordLabel dbo:Phillips .
+
+  dbo:Doo-Wops_and_Hooligans a dbo:Album ;
+	dbo:originalTitle "Doo-Wops & Hooligans" ;
+	dbo:releaseDate "2010-10-04" ;
+	dbo:artist dbo:Bruno_Mars ;
+	dbo:recordLabel dbo:Atlantic_Records.
+
+dbo:Unorthodox_Jukebox a dbo:Album ;
+	dbo:originalTitle "Unorthodox Jukebox" ;
+	dbo:releaseDate "2012-12-07" ;
+	dbo:artist dbo:Bruno_Mars ;
+	dbo:recordLabel dbo:Atlantic_Records.
+
+dbo:Liquor_Store_Blues a dbo:Album ;
+	dbo:originalTitle "Liquor Store Blues" ;
+	dbo:releaseDate "2010-09-21" ;
+	dbo:artist dbo:Bruno_Mars ;
+	dbo:recordLabel dbo:Elektra_Records.
+
+dbo:Sim_e_Não a dbo:Album ;
+	dbo:originalTitle "Sim e Não";
+	dbo:releaseDate "2006-05-03";
+	dbo:artist dbo:Nando_Reis;
+	dbo:recordLabel dbo:Universal_Music_Group.
+
+dbo:EPIC a dbo:RecordLabel ;
+	dbp:name "Epic Records" ;
+	dbp:country "USA" ;
+	foaf:homepage "http://www.epic-records.com/" .
+
+dbo:Phillips a dbo:RecordLabel ;
+	dbp:name "Philips Records" ;
+	dbp:country "Netherlands" ;
+	foaf:homepage "http://www.deccaclassics.com/en/" .
+
+dbo:Atlantic_Records a dbo:RecordLabel ;
+	dbp:name "Atlantic Records" ;
+	dbp:country "USA" ;
+	foaf:homepage "http://www.atlanticrecords.com" .
+
+dbo:Elektra_Records a dbo:RecordLabel ;
+	dbp:name "Elektra Records" ;
+	dbp:country "United_States" ;
+	foaf:homepage "http://www.elektra.com" .
+
+dbo:Universal_Music_Group a dbo:RecordLabel ;
+	dbp:name "Universal Music Group" ;
+	dbp:country "USA" ;
+	foaf:homepage "http://www.universalmusic.com" .
+
+dbo:Hawaii a mo:Country;
+	vcard:country_name "Hawaii".
+
+dbo:Brazil a mo:Country;
+	vcard:country_name "Brazil".
+
+dbo:United_State a mo:Country;
+	vcard:country_name "United_State".
+
+dbp:Gary_Indiana a mo:Place;
+   dbp:country dbp:United_State.
+
+dbp:Honolulu a mo:Place;
+	dbp:country dbp:Hawaii.
+
+dbp:Rio_de_Janeiro a mo:Place;
+	dbp:country dbp:Brazil.
+
+dbp:São_Paulo a mo:Place;
+	dbp:country dbp:Brazil.
+
+
+
+
+
+
+

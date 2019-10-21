@@ -1,0 +1,114 @@
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix moa: <http://www.example.org/moa/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix mb: <http://www.example.org/ontology/mb/>.
+@prefix dbp: <http://dbpedia.org/property/>.
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix conf:    <conf/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix vcard:   <http://www.w3.org/2001/vcard-rdf/3.0#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+mo:Record  a       owl:Class , rdfs:Class ;
+      rdfs:label "mo:Record";
+      rdfs:subClassOf [ a owl:Restriction ;
+                  owl:onProperty moa:recordLabel ;
+                  owl:maxCardinality "1000"^^<http://www.w3.org/2001/XMLSchema#int>
+      ];
+      rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty foaf:maker ;
+            owl:maxCardinality "1000"^^<http://www.w3.org/2001/XMLSchema#int>
+      ] .
+           
+dc:date
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain mo:Record;
+      rdfs:label "dc:date" ;
+      rdfs:range xsd:string .
+
+dc:title
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain mo:Record;
+      rdfs:label "dc:title" ;
+      rdfs:range xsd:string .
+      
+foaf:maker
+      a       rdf:Property , owl:ObjectProperty ;
+      rdfs:domain mo:Record;
+      rdfs:label "foaf:maker" ;
+      rdfs:range mo:MusicArtist .      
+
+moa:recordLabel
+      a       rdf:Property , owl:ObjectProperty ;
+      rdfs:domain mo:Record;
+      rdfs:label "moa:recordLabel" ;
+      rdfs:range mo:Label .      
+
+mo:MusicArtist  a       owl:Class , rdfs:Class ;
+      rdfs:label "mo:MusicArtist" ;
+      rdfs:subClassOf [ a owl:Restriction ;
+                  owl:onProperty foaf:made ;
+                  owl:maxCardinality "1000"^^<http://www.w3.org/2001/XMLSchema#int>
+      ];
+      rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty moa:birthPlace ;
+            owl:maxCardinality "2"^^<http://www.w3.org/2001/XMLSchema#int>
+      ] ;
+            rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty moa:hasLabel ;
+            owl:maxCardinality "2"^^<http://www.w3.org/2001/XMLSchema#int>
+      ] .
+
+foaf:name
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain mo:MusicArtist;
+      rdfs:label "foaf:name" ;
+      rdfs:range xsd:string .
+      
+moa:careerDuration
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain mo:MusicArtist ;
+      rdfs:label "moa:careerDuration" ;
+      rdfs:range xsd:string .
+      
+foaf:made
+      a       rdf:Property , owl:ObjectProperty ;
+      rdfs:domain mo:MusicArtist ;
+      rdfs:label "foaf:made" ;
+      rdfs:range mo:Record .
+
+moa:birthPlace
+      a       rdf:Property , owl:ObjectProperty ;
+      rdfs:domain mo:MusicArtist;
+      rdfs:label "moa:birthPlace" ;
+      rdfs:range moa:Country .
+
+moa:hasLabel
+      a       rdf:Property , owl:ObjectProperty ;
+      rdfs:domain mo:MusicArtist;
+      rdfs:label "moa:hasLabel" ;
+      rdfs:range moa:Label .
+
+moa:Country  a       owl:Class , rdfs:Class ;
+      rdfs:label "moa:Country" .
+      
+vcard:country-name
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain moa:Country ;
+      rdfs:label "vcard:country-name" ;
+      rdfs:range xsd:string .
+
+mo:Label  a       owl:Class , rdfs:Class ;
+      rdfs:label "mo:Label" .
+      
+moa:labelName
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain mo:Label ;
+      rdfs:label "moa:labelName" ;
+      rdfs:range xsd:string .
+      

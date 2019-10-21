@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.media.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="345.0" prefWidth="499.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.br.ufc.arida.r2rbyassertions.main.FunctionTransformationController">
+   <children>
+      <Pane prefHeight="345.0" prefWidth="499.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="43.0" layoutY="69.0" text="String functions:" textFill="#171717" />
+            
+            <MenuButton fx:id="stringFunction" layoutX="148.0" layoutY="65.0" mnemonicParsing="false" text="Functions">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="join" />
+                <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="concat" />
+                <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="split" />
+                <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="listJoin" />
+                <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="regexToList" />
+                <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="replaceAll" />
+              </items>
+            </MenuButton>
+            
+            <Label layoutX="276.0" layoutY="191.0" text="Properties:" textFill="#171717">
+
+            </Label>
+            <Label layoutX="15.0" layoutY="9.0" prefHeight="20.0" prefWidth="181.0" text="Transformation Functions">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            
+            <MenuButton fx:id="varProperty" layoutX="353.0" layoutY="187.0" mnemonicParsing="false" onAction="#transfomationFunction" text="Properties" />
+            
+            <TextField fx:id="textFunction" layoutX="14.0" layoutY="299.0" prefHeight="25.0" prefWidth="361.0" />
+            
+            <Label layoutX="14.0" layoutY="273.0" prefHeight="17.0" prefWidth="157.0" text="Transformation Functions" textFill="#141414">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            
+            <MenuButton fx:id="ListFunction" layoutX="148.0" layoutY="188.0" mnemonicParsing="false" text="Functions">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="list" />
+                  <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="sublist" />
+                  <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="subListByIndex" />
+                  <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="listConcat" />
+                  <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="getByIndex" />
+                  <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="length" />
+               </items>
+            </MenuButton>
+            
+            <Label layoutX="54.0" layoutY="192.0" text="List functions:" textFill="#111010">
+
+            </Label>
+            
+            <MenuButton fx:id="ArithmeticFunction" layoutX="148.0" layoutY="119.0" mnemonicParsing="false" text="Functions">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="add" />
+                  <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="subtract" />
+                  <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="multiply" />
+                  <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="divide" />
+                  <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="integer" />
+                  <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="mod" />
+               </items>
+            </MenuButton>
+            
+            <Label layoutX="19.0" layoutY="122.0" text="Arithmetic functions:" textFill="#141414">
+
+            </Label>
+            <Button fx:id="saveFunction" layoutX="386.0" layoutY="298.0" mnemonicParsing="false" onAction="#saveFunction" text="Save" />
+            <Label layoutX="273.0" layoutY="70.0" text="Functions:" textFill="#111010">
+
+            </Label>
+            
+            <MenuButton fx:id="functionGeneral" layoutX="353.0" layoutY="67.0" mnemonicParsing="false" text="Functions">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="xpath:abs" />
+                  <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="xpath:ceiling" />
+                  <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="xpath:floor" />
+                  <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="xpath:round" />
+                  <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="xpath:round-half-to-even" />
+                  <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="xpath:codepoints-to-string" />
+                  <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="xpath:string-to-codepoints" />
+                  <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="xpath:compare" />
+                  <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="xpath:codepoint-equal" />
+                  <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="xpath:concat" />
+                  <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="xpath:string-join" />
+                  <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="xpath:substring" />
+                  <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="xpath:string-length" />
+                  <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="xpath:normalize-space" />
+                  <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="xpath:normalize-unicode" />
+                  <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="xpath:upper-case" />
+                  <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="xpath:lower-case" />
+                  <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="xpath:translate" />
+                  <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="xpath:encode-for-uri" />
+                  <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="xpath:iri-to-uri" />
+                  <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="xpath:escape-html-uri" />
+                  <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="xpath:contains" />
+                  <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="xpath:starts-with" />
+                  <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="xpath:ends-with" />
+                  <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="xpath:substring-before" />
+                  <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="xpath:substring-after" />
+                  <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="xpath:matches" />
+                  <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="xpath:replace" />
+                  <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="xpath:tokenize" />
+               </items>
+            </MenuButton>
+            
+            <Accordion layoutX="74.0" layoutY="131.0" />
+            <Separator layoutX="246.0" layoutY="39.0" orientation="VERTICAL" prefHeight="200.0" />
+            <Separator layoutX="17.0" layoutY="38.0" prefHeight="4.0" prefWidth="231.0" />
+            <Button fx:id="cancel" layoutX="433.0" layoutY="298.0" mnemonicParsing="false" onAction="#cancelFired" text="Cancel" />
+            <Separator layoutX="253.0" layoutY="39.0" orientation="VERTICAL" prefHeight="200.0" />
+            <Separator layoutX="254.0" layoutY="38.0" prefHeight="4.0" prefWidth="222.0" />
+            <Separator layoutX="491.0" layoutY="19.0" orientation="VERTICAL" prefHeight="314.0" prefWidth="6.0" />
+            <Separator layoutX="472.0" layoutY="39.0" orientation="VERTICAL" prefHeight="200.0" />
+            <Separator layoutX="16.0" layoutY="39.0" orientation="VERTICAL" prefHeight="200.0" />
+            <Separator layoutX="190.0" layoutY="18.0" prefHeight="4.0" prefWidth="302.0" />
+            <Separator layoutX="5.0" layoutY="332.0" prefHeight="4.0" prefWidth="487.0" />
+            <Separator layoutX="4.0" layoutY="19.0" orientation="VERTICAL" prefHeight="314.0" prefWidth="6.0" />
+            
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="paneSourceOntology" prefHeight="600.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.br.ufc.arida.r2rbyassertions.main.LoadSourceOntologyController">
+   <children>
+      <AnchorPane id="anchorPane1" layoutX="7.0" layoutY="59.0" maxWidth="300.0" minHeight="0.0" minWidth="0.0" prefHeight="517.0" prefWidth="250.0">
+         <children>
+            <HBox id="HBox" alignment="BOTTOM_CENTER" layoutX="90.0" layoutY="472.0" prefHeight="35.0" prefWidth="131.0" spacing="5.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#cancelFired" prefHeight="40.0" prefWidth="70.0" text="Cancel" />
+                  <Button fx:id="finish" mnemonicParsing="false" onAction="#finishTreeSource" prefHeight="25.0" prefWidth="59.0" text="Finish" />
+               </children>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </HBox>
+            <HBox layoutX="7.0" prefHeight="469.0" prefWidth="239.0">
+               <children>
+                  <VBox alignment="TOP_CENTER" minHeight="413.0" minWidth="198.0" prefHeight="469.0" prefWidth="239.0">
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                     <children>
+                        <TreeView id="ontoTreeSource" fx:id="ontoTreeS" minWidth="-1.0" onMouseClicked="#tratarEventoOntoTreeSource" prefHeight="469.0" prefWidth="239.0" showRoot="false" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <Label layoutX="73.0" layoutY="28.0" text="Source Ontology">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+   </children>
+</AnchorPane>

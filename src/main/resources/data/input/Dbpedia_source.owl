@@ -1,0 +1,113 @@
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix moa: <http://www.example.org/moa/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix mb: <http://www.example.org/ontology/mb/>.
+@prefix dbp: <http://dbpedia.org/property/>.
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix conf: <conf/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix vcard: <http://www.w3.org/2001/vcard-rdf/3.0#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+
+dbo:Album  a       owl:Class , rdfs:Class ;
+      rdfs:label "dbo:Album";
+      rdfs:subClassOf [ a owl:Restriction ;
+                  owl:onProperty dbo:artist ;
+                  owl:maxCardinality "1000"^^<http://www.w3.org/2001/XMLSchema#int>
+      ];
+      rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty dbo:recordLabel ;
+            owl:maxCardinality "1000"^^<http://www.w3.org/2001/XMLSchema#int>
+      ] .
+
+
+dbo:originalTitle     a       rdf:Property , owl:DatatypeProperty; 
+      rdfs:domain dbo:Album;
+      rdfs:label "dbo:originalTitle"; 
+      rdfs:range xsd:string.
+
+dbo:releaseDate     a       rdf:Property , owl:DatatypeProperty; 
+	rdfs:domain dbo:Album;
+	rdfs:label "dbo:releaseDate"; 
+	rdfs:range xsd:string.
+
+dbo:artist
+      a       rdf:Property , owl:ObjectProperty ;
+      rdfs:domain dbo:Album;
+      rdfs:label "dbo:artist" ;
+      rdfs:range dbo:MusicalArtist .
+
+dbo:recordLabel
+      a       rdf:Property , owl:ObjectProperty ;
+      rdfs:domain dbo:Album;
+      rdfs:label "dbo:recordLabel" ;
+      rdfs:range dbo:RecordLabel .
+
+dbo:MusicalArtist  a       owl:Class , rdfs:Class ;
+      rdfs:label "dbo:MusicalArtist";
+      rdfs:subClassOf [ a owl:Restriction ;
+                  owl:onProperty dbp:birthPlace ;
+                  owl:maxCardinality "1000"^^<http://www.w3.org/2001/XMLSchema#int>
+      ].
+
+dbp:birthPlace
+      a       rdf:Property , owl:ObjectProperty ;
+      rdfs:domain dbo:MusicalArtist;
+      rdfs:label "dbp:birthPlace" ;
+      rdfs:range dbo:Place .
+
+foaf:name    a       rdf:Property , owl:DatatypeProperty ;
+	rdfs:domain dbo:MusicalArtist;
+	rdfs:label "foaf:name"; 
+	rdfs:range xsd:string.
+
+dbp:startCareer    a       rdf:Property , owl:DatatypeProperty ;
+	rdfs:domain dbo:MusicalArtist;
+	rdfs:label "dbp:startCareer"; 
+	rdfs:range xsd:string.
+
+dbp:endCareer    a       rdf:Property , owl:DatatypeProperty ;
+	rdfs:domain dbo:MusicalArtist;
+	rdfs:label "dbp:endCareer"; 
+	rdfs:range xsd:string .
+
+dbo:Place  a       owl:Class , rdfs:Class ;
+      rdfs:label "dbo:Place";
+      rdfs:subClassOf [ a owl:Restriction ;
+                  owl:onProperty dbp:country ;
+                  owl:maxCardinality "1000"^^<http://www.w3.org/2001/XMLSchema#int>
+      ].
+
+dbp:country
+      a       rdf:Property , owl:ObjectProperty ;
+      rdfs:domain dbo:Place;
+      rdfs:label "dbp:country" ;
+      rdfs:range dbo:Country .
+
+dbo:Country  a       owl:Class , rdfs:Class ;
+ 	rdfs:label "dbo:Country".
+
+dbo:longName    a       rdf:Property , owl:DatatypeProperty ;
+	rdfs:domain dbo:Country;
+	rdfs:label "dbo:longName"; 
+	rdfs:range xsd:string .
+
+dbo:otherName    a       rdf:Property , owl:DatatypeProperty ;
+	rdfs:domain dbo:Country;
+	rdfs:label "dbo:otherName"; 
+	rdfs:range xsd:string .
+
+dbo:RecordLabel  a       owl:Class , rdfs:Class ;
+      rdfs:label "dbo:RecordLabel".
+
+dbp:name    a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain dbo:RecordLabel;
+      rdfs:label "dbp:name"; 
+      rdfs:range xsd:string .
+

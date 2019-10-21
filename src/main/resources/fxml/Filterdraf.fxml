@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="281.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.br.ufc.arida.r2rbyassertions.main.FilterController">
+    <children>
+        <Pane prefHeight="281.0" prefWidth="600.0">
+            <children>
+             
+                <Label layoutX="19.0" layoutY="14.0" text="Filter Condition">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+            
+                <Separator layoutX="112.0" layoutY="20.0" prefHeight="8.0" prefWidth="472.0" />
+                <Separator layoutX="582.0" layoutY="23.0" orientation="VERTICAL" prefHeight="249.0" prefWidth="5.0" />
+                <Separator layoutX="11.0" layoutY="269.0" prefHeight="8.0" prefWidth="573.0" />
+                <Separator layoutX="10.0" layoutY="23.0" orientation="VERTICAL" prefHeight="249.0" prefWidth="1.0" />
+                <TextField fx:id="txtFilter" layoutX="20.0" layoutY="225.0" prefHeight="25.0" prefWidth="457.0" />
+                <Button fx:id="save" layoutX="486.0" layoutY="225.0" mnemonicParsing="false" onAction="#saveFired" text="Ok" />
+                <Button fx:id="cancel" layoutX="524.0" layoutY="225.0" mnemonicParsing="false" onAction="#cancelFired" text="Cancel" />
+                <Label layoutX="162.0" layoutY="59.0" text="Operator:" />
+                <ComboBox fx:id="cbxOperator" layoutX="159.0" layoutY="94.0" onAction="#filterOperator" prefHeight="25.0" prefWidth="91.0">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="&lt;&gt;" />
+                            <String fx:value="&gt;" />
+                            <String fx:value="&gt;=" />
+                            <String fx:value="&lt;" />
+                            <String fx:value="&lt;=" />
+                            <String fx:value=" = " />
+                        </FXCollections>
+                    </items>
+                </ComboBox>
+            
+                <Label layoutX="20.0" layoutY="200.0" prefHeight="17.0" prefWidth="180.0" text="Filter[Query/Condition]">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+            
+                <Label layoutX="31.0" layoutY="161.0" text="Functions: " />
+            
+                <MenuButton fx:id="unaryFun" layoutX="97.0" layoutY="158.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="122.0" text="MenuButton">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#functFilterUnary" text="Unary Function: " />
+                  <MenuItem mnemonicParsing="false" onAction="#functFilterUnary" text="Binary Function: " />
+                    </items>
+                </MenuButton>
+
+                <Label layoutX="29.0" layoutY="59.0" text="Property:" />
+            
+                <MenuButton fx:id="filterPropertyMenu" layoutX="27.0" layoutY="94.0" mnemonicParsing="false" onAction="#filterPropertyFired" text="MenuButton">
+
+                </MenuButton>
+                <Button fx:id="andFired" disable="false" layoutX="304.0" layoutY="154.0" mnemonicParsing="false" onAction="#andFired" text="AND" />
+                <Button fx:id="orFired" disable="false" layoutX="401.0" layoutY="154.0" mnemonicParsing="false" onAction="#orFired" text="OR" />
+                <Button fx:id="optionalBtn" layoutX="440.0" layoutY="154.0" mnemonicParsing="false" onAction="#optionalFired" text="Optional" />
+                <!--<TextField fx:id="openParenthesisFiredalue" layoutX="395.0" layoutY="94.0" prefHeight="25.0" prefWidth="75.0" />-->
+                <Label layoutX="297.0" layoutY="59.0" text="Value:" />
+            
+                <MenuButton layoutX="440.0" layoutY="94.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="114.0" text="Xsd" fx:id="xsdBtn">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#filterXsd" text="xsd:integer" />
+                        <MenuItem mnemonicParsing="false" onAction="#filterXsd" text="xsd:decimal" />
+                        <MenuItem mnemonicParsing="false" onAction="#filterXsd" text="xsd:double" />
+                        <MenuItem mnemonicParsing="false" onAction="#filterXsd" text="xsd:float" />
+                        <MenuItem mnemonicParsing="false" onAction="#filterXsd" text="xsd:string" />
+                        <MenuItem mnemonicParsing="false" onAction="#filterXsd" text="xsd:boolean" />
+                        <MenuItem mnemonicParsing="false" onAction="#filterXsd" text="xsd:datatime" />
+                        <MenuItem mnemonicParsing="false" onAction="#filterXsd" text="xsd:date" />
+                    </items>
+                </MenuButton>
+            
+                <Separator layoutX="333.0" layoutY="65.0" prefHeight="8.0" prefWidth="224.0" />
+                <Separator layoutX="263.0" layoutY="68.0" prefHeight="0.0" prefWidth="31.0" />
+                <Separator layoutX="556.0" layoutY="68.0" orientation="VERTICAL" prefHeight="77.0" prefWidth="0.0" />
+            
+                <Separator layoutX="263.0" layoutY="141.0" prefHeight="8.0" prefWidth="294.0" />
+                <Separator layoutX="263.0" layoutY="68.0" orientation="VERTICAL" prefHeight="77.0" prefWidth="0.0" />
+                <TextField fx:id="typeValue" layoutX="270.0" layoutY="94.0" onAction="#filterValue" prefHeight="22.0" prefWidth="159.0" />
+                <Button fx:id="notBnt" layoutX="349.0" layoutY="154.0" mnemonicParsing="false" onAction="#notFired" prefHeight="22.0" prefWidth="45.0" text="NOT" />
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>

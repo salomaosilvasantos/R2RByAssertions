@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>-->
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="215.0" prefWidth="744.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.br.ufc.arida.r2rbyassertions.main.TbpaneCCAController">
+   <children>
+      <SplitPane prefHeight="216.0" prefWidth="745.0">
+         <items>
+            <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Nested">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Label layoutX="14.0" layoutY="15.0" text="CCA:" />
+                              <Button fx:id="add"  layoutX="47.0" layoutY="11.0" onAction="#loadS"  mnemonicParsing="false" />
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Filter">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+         </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

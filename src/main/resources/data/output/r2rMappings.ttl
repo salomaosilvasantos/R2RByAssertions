@@ -1,0 +1,13 @@
+@prefix r2r: <http://www4.wiwiss.fu-berlin.de/bizer/r2r/> .
+
+# Made up Mapping publisher
+@prefix mp: <http://www.example.org/> . 
+
+#Property Mappings
+
+mp:ΨDtitle11
+a r2r:PropertyMapping;
+r2r:prefixDefinitions "dbo:<http://dbpedia.org/ontology/> . dc:<http://purl.org/dc/elements/1.1/> ";
+r2r:MappingRef mp:ΨCAlbum24;
+r2r:sourcePattern "?SUBJ dbo:originalTitle  ?originalTitle";
+r2r:targetPattern "?SUBJ dc:title  ?originalTitle".

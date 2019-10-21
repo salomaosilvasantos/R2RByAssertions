@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="101.0" prefWidth="233.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.br.ufc.arida.r2rbyassertions.main.FunctionTransformationController">
+   <children>
+      <Pane prefHeight="101.0" prefWidth="233.0">
+         <children>
+            <MenuButton fx:id="stringFunction" layoutX="95.0" layoutY="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="128.0" text="MenuButton">
+              <items>
+                  <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="join" />
+                  <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="concat" />
+                  <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="split" />
+                  <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="listJoin" />
+                  <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="regexToList" />
+                  <MenuItem mnemonicParsing="false" onAction="#transfomationFunction" text="replaceAll" />
+              </items>
+            </MenuButton>
+            <Label layoutX="4.0" layoutY="15.0" text="List of Functions:" />
+            <Label layoutX="8.0" layoutY="65.0" text="Propertys:" />
+            <MenuButton fx:id="varProperty" layoutX="76.0" layoutY="62.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="128.0" text="MenuButton">
+            </MenuButton>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="282.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.br.ufc.arida.r2rbyassertions.main.FilterController">
+    <children>
+        <Pane prefHeight="282.0" prefWidth="600.0">
+            <children>
+             
+                <Label layoutX="19.0" layoutY="9.0" text="Filter Condition">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+            
+                <Separator layoutX="112.0" layoutY="15.0" prefHeight="8.0" prefWidth="481.0" style="-fx-border-color: gery;" />
+                <Separator layoutX="591.0" layoutY="18.0" orientation="VERTICAL" prefHeight="250.0" prefWidth="6.0" />
+                <Separator layoutX="12.0" layoutY="265.0" prefHeight="8.0" prefWidth="581.0" />
+                <Separator layoutX="11.0" layoutY="18.0" orientation="VERTICAL" prefHeight="250.0" prefWidth="6.0" />
+                <TextField fx:id="txtFilter" layoutX="23.0" layoutY="227.0" prefHeight="25.0" prefWidth="457.0" />
+                <Button fx:id="save" layoutX="489.0" layoutY="227.0" mnemonicParsing="false" onAction="#saveFired" text="Ok" />
+                <Button fx:id="cancel" layoutX="527.0" layoutY="227.0" mnemonicParsing="false" onAction="#cancelFired" text="Cancel" />
+                <Label layoutX="154.0" layoutY="38.0" text="Operator:" />
+                <ComboBox fx:id="cbxOperator" layoutX="154.0" layoutY="59.0" onAction="#filterOperator" prefHeight="25.0" prefWidth="91.0">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="&lt;&gt;" />
+                            <String fx:value="&gt;" />
+                            <String fx:value="&gt;=" />
+                            <String fx:value="&lt;" />
+                            <String fx:value="&lt;=" />
+                            <String fx:value=" = " />
+                        </FXCollections>
+                    </items>
+                </ComboBox>
+            
+                <Label layoutX="24.0" layoutY="203.0" prefHeight="17.0" prefWidth="180.0" text="Filter[Query/Condition]">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+            
+                <Label layoutX="32.0" layoutY="110.0" text="Unary Function: " />
+            
+                <MenuButton fx:id="unaryFun" layoutX="127.0" layoutY="107.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="105.0" text="MenuButton">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#functFilterUnary" text="isIri" />
+                        <MenuItem mnemonicParsing="false" onAction="#functFilterUnary" text="isUri" />
+                        <MenuItem mnemonicParsing="false" onAction="#functFilterUnary" text="isBlank" />
+                        <MenuItem mnemonicParsing="false" onAction="#functFilterUnary" text="isLiteral" />
+                    </items>
+                </MenuButton>
+
+                <Label layoutX="29.0" layoutY="37.0" text="Property:" />
+            
+                <MenuButton fx:id="filterPropertyMenu" layoutX="29.0" layoutY="59.0" mnemonicParsing="false" onAction="#filterPropertyFired" text="MenuButton">
+
+                </MenuButton>
+                <Button fx:id="andFired" disable="false" layoutX="322.0" layoutY="118.0" mnemonicParsing="false" onAction="#andFired" text="AND" />
+                <Button fx:id="orFired" disable="false" layoutX="419.0" layoutY="118.0" mnemonicParsing="false" onAction="#orFired" text="OR" />
+                <Button fx:id="optionalBtn" layoutX="458.0" layoutY="118.0" mnemonicParsing="false" onAction="#optionalFired" text="Optional" />
+            
+                <MenuButton fx:id="binaryFun" layoutX="127.0" layoutY="164.0" mnemonicParsing="false" onAction="#functFilterBinary" prefHeight="25.0" prefWidth="105.0" text="MenuButton">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#functFilterBinary" text="sameTerm" />
+                        <MenuItem mnemonicParsing="false" onAction="#functFilterBinary" text="langMatch" />
+                        <MenuItem mnemonicParsing="false" onAction="#functFilterBinary" text="regex" />
+                    </items>
+                </MenuButton>
+            
+                <Label layoutX="32.0" layoutY="168.0" text="Binary Function: " />
+                <Button fx:id="notBnt" layoutX="367.0" layoutY="118.0" mnemonicParsing="false" onAction="#notFired" prefHeight="22.0" prefWidth="45.0" text="NOT" />
+                <HBox layoutX="275.0" layoutY="29.0" prefHeight="77.0" prefWidth="296.0" style="-fx-border-radius: 1px; -fx-border-color: grey;">
+                    <children>
+                        <AnchorPane prefHeight="77.0" prefWidth="296.0">
+                            <children>
+                                <Pane prefHeight="77.0" prefWidth="296.0">
+                                    <children>
+                              
+                                        <MenuButton layoutX="168.0" layoutY="30.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="124.0" text="Xsd" fx:id="xsdBtn">
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" onAction="#filterXsd" text="xsd:integer" />
+                                                <MenuItem mnemonicParsing="false" onAction="#filterXsd" text="xsd:decimal" />
+                                                <MenuItem mnemonicParsing="false" onAction="#filterXsd" text="xsd:double" />
+                                                <MenuItem mnemonicParsing="false" onAction="#filterXsd" text="xsd:float" />
+                                                <MenuItem mnemonicParsing="false" onAction="#filterXsd" text="xsd:string" />
+                                                <MenuItem mnemonicParsing="false" onAction="#filterXsd" text="xsd:boolean" />
+                                                <MenuItem mnemonicParsing="false" onAction="#filterXsd" text="xsd:datatime" />
+                                                <MenuItem mnemonicParsing="false" onAction="#filterXsd" text="xsd:date" />
+                                            </items>
+                                        </MenuButton>
+                                        <TextField fx:id="typeValue" layoutX="6.0" layoutY="30.0" onAction="#filterValue" prefHeight="25.0" prefWidth="156.0" />
+                                        <!--<TextField fx:id="openParenthesisFiredalue" layoutX="395.0" layoutY="94.0" prefHeight="25.0" prefWidth="75.0" />-->
+                                        <Label layoutX="7.0" layoutY="3.0" text="Value:" />
+                                    </children>
+                                </Pane>
+                            </children>
+                        </AnchorPane>
+                    </children>
+                </HBox>
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>
